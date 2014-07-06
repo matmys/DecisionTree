@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="DecisionTree.Controls.Toolbox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:t="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    xmlns:c="clr-namespace:DecisionTree.Controls"
+    xmlns:s="clr-namespace:DecisionTree"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    x:Name="toolBox">
+
+    <UserControl.Resources>
+        <Style TargetType="c:ToolboxItem">
+            <Setter Property="ItemScale" Value="{Binding ElementName=toolBox, Path=ItemScale}"/>
+            <Setter Property="Height" Value="{Binding ElementName=toolBox, Path=ItemSize.Height}"/>
+            <Setter Property="Width" Value="{Binding ElementName=toolBox, Path=ItemSize.Width}"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" BorderThickness="0">
+        <t:PanelDragDropTarget Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top" AllowedSourceEffects="Copy">
+            <t:WrapPanel x:Name="WrapPanel" Margin="10,5,10,5">
+                <c:ToolboxItem ItemStyle="{StaticResource Decision}" DragThumbStyle="{StaticResource Decision_DragThumb}" StyleString="Decision"/>
+                <c:ToolboxItem ItemStyle="{StaticResource Chance}" DragThumbStyle="{StaticResource Chance_DragThumb}" StyleString="Chance"/>
+                <c:ToolboxItem ItemStyle="{StaticResource End}" DragThumbStyle="{StaticResource End_DragThumb}" StyleString="End"/>
+            </t:WrapPanel>
+        </t:PanelDragDropTarget>
+    </ScrollViewer>
+
+
+</UserControl>

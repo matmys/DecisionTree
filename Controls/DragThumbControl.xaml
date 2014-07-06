@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="DecisionTree.Controls.DragThumbControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="clr-namespace:DecisionTree.Controls"
+    mc:Ignorable="d">
+
+    <Grid Background="{x:Null}">
+        <Thumb x:Name="thumbControl" Cursor="Hand" DragDelta="DragThumb_DragDelta" DragStarted="DragThumb_DragStarted" DragCompleted="DragThumb_DragCompleted"/>
+    </Grid>
+</UserControl>

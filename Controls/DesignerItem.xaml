@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="DecisionTree.Controls.DesignerItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:c="clr-namespace:DecisionTree.Controls"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="400"
+             x:Name="designerItem">
+    
+    <UserControl.Resources>   
+        <Style TargetType="c:DesignerItem">
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+               
+        <Style TargetType="ContentPresenter">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="IsHitTestVisible" Value="False"/>
+        </Style>
+
+        <Style TargetType="Rectangle" x:Key="Selection">
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="Margin" Value="-5"/>
+            <Setter Property="StrokeDashArray" Value="10, 4"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <ContentControl MouseMove="DesignerItem_MouseMove">
+        <Grid DataContext="{Binding ElementName=designerItem}">
+
+            <!--Drag Control-->
+            <c:DragThumbControl x:Name="DragControl"/>
+
+            <!--ContentPresenter-->
+            <ContentPresenter x:Name="PART_ContentPresenter"
+                              Height="{Binding Height}"
+                              Width="{Binding Width}"
+                              Margin="{Binding Padding}"
+                              Content="{Binding AdditionalContent}"/>
+
+            <!--Selection Decorator-->
+            <Rectangle x:Name="SelectionDecorator" Style="{StaticResource Selection}"/>
+
+            <!--Removed ResizeDecorator-->
+            <!--<c:ResizeThumbControl x:Name="ResizeControl" Visibility="Collapsed"/>-->
+        </Grid>
+    </ContentControl>
+</UserControl>

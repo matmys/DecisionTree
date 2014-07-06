@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="DecisionTree.Controls.ConnectionPropertiesBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="130" d:DesignWidth="180"
+    x:Name="connectionProperties">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock x:Name="ConnectionTitle" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Connection #1"/>
+        
+        <Grid Grid.Row="1" Margin="0,5,0,0" DataContext="{Binding ElementName=connectionProperties}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="65"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Text="Label:" />
+            <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Text="Payout:"/>
+            <TextBlock x:Name="ProbabilityRow1" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="Probability:"/>
+
+            <TextBox x:Name="LabelTextBox" 
+                     Grid.Row="0" 
+                     Grid.Column="1" 
+                     Height="25" 
+                     Margin="5,5,0,2.5" 
+                     GotFocus="Label_GotFocus" 
+                     LostFocus="Label_LostFocus"/>
+            
+            <TextBox x:Name="PayoutTextBox" 
+                     Grid.Row="1" 
+                     Grid.Column="1" 
+                     Height="25" 
+                     Margin="5,2.5,0,2.5" 
+                     GotFocus="Label_GotFocus" 
+                     LostFocus="Label_LostFocus"
+                     TextChanged="PayoutTextBox_TextChanged"/>
+            
+            
+            <Grid Grid.Row="2" Grid.Column="1" x:Name="ProbabilityRow2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBox x:Name="ProbabilityTextBox" 
+                         Grid.Column="0" Height="25" 
+                         Margin="5,2.5,5,5" 
+                         TextChanged="ProbabilityTextBox_TextChanged"
+                         GotFocus="Label_GotFocus"
+                         LostFocus="Label_LostFocus"/>
+                <TextBlock Grid.Column="1" Text="%" VerticalAlignment="Center" Margin="5"/>
+                
+            </Grid>
+            
+        </Grid>
+    </Grid>
+</UserControl>
