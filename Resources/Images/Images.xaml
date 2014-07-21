@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <BitmapImage x:Key="DocumentImage" UriSource="document.png"/>
+    <BitmapImage x:Key="OpenImage" UriSource="open.png"/>
+    <BitmapImage x:Key="SaveImage" UriSource="save.png"/>
+    <BitmapImage x:Key="PictureImage" UriSource="picture.png"/>
+    <BitmapImage x:Key="GridImage" UriSource="grid.png"/>
+    <BitmapImage x:Key="HelpImage" UriSource="help.png"/>
+    <BitmapImage x:Key="CalculateImage" UriSource="calculate.png"/>
+    <BitmapImage x:Key="SymetricAlignImage" UriSource="symetricAlign.png"/>
+    <BitmapImage x:Key="CondensedAlignImage" UriSource="condensedAlign.png"/>
+    <BitmapImage x:Key="CogImage" UriSource="cog.png"/>
+    
+</ResourceDictionary>

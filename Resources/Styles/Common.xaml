@@ -81,6 +81,8 @@
 
     <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="#DDD" />
 
+    <SolidColorBrush x:Key="BlueBackgroundBrush" Color="#DFECF9" />
+
     <!--Border Brushes-->
     <LinearGradientBrush x:Key="NormalBorderBrush" StartPoint="0,0" EndPoint="0,1">
         <GradientBrush.GradientStops>
@@ -94,5 +96,8 @@
     <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
     <SolidColorBrush x:Key="SolidBorderBrush" Color="#888" />
     <SolidColorBrush x:Key="LightBorderBrush" Color="LightGray" />
+
+    <SolidColorBrush x:Key="LightBlueBorderBrush" Color="#7FB2E5"/>
+    <SolidColorBrush x:Key="DarkBlueBorderBrush" Color="#3399FF"/>
 
 </ResourceDictionary>

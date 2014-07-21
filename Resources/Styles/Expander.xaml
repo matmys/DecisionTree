@@ -8,7 +8,7 @@
 
     <!-- SimpleStyles: Expander -->
 
-    <Style TargetType="ToggleButton">
+    <Style TargetType="ToggleButton" x:Key="ExpanderButton">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
@@ -86,7 +86,7 @@
                                 </Grid.ColumnDefinitions>
                                 <ToggleButton IsChecked="{Binding Path=IsExpanded,Mode=TwoWay,
                               RelativeSource={RelativeSource TemplatedParent}}"
-                                               
+                                               Style="{StaticResource ExpanderButton}"
                               Background="{StaticResource NormalBrush}" />
                                 <ContentPresenter Grid.Column="1"
                                   Margin="4" Content="{TemplateBinding Header}"/>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
@@ -16,7 +15,7 @@ namespace DecisionTree.Extensions
         public static DependencyObject FindAncestor(this DependencyObject obj, Type ancestorType)
         {
             var tmp = VisualTreeHelper.GetParent(obj);
-            while (tmp != null && !ancestorType.IsAssignableFrom(tmp.GetType()))
+            while (tmp != null && !ancestorType.IsInstanceOfType(tmp))
             {
                 tmp = VisualTreeHelper.GetParent(tmp);
             }

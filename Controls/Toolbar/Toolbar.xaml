@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="DecisionTree.Controls.Toolbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="clr-namespace:DecisionTree.Controls"
+    xmlns:m="clr-namespace:DecisionTree.Model"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400"
+    x:Name="ToolbarControl">
+    
+    <UserControl.Resources>
+        <Style TargetType="Border">
+            <Setter Property="Margin" Value="10, 5, 10, 0"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Height" Value="26"/>
+            <Setter Property="BorderBrush" Value="{StaticResource LightBorderBrush}"/>
+            <Setter Property="Padding" Value="16,0,16,0"/>
+        </Style>
+
+        <Style x:Key="Separator" TargetType="Rectangle" BasedOn="{StaticResource VerticalSeparator}">
+            <Setter Property="Fill" Value="{StaticResource LightBorderBrush}"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+        
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="3,2,3,2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="3,2,3,2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+            
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate DataType="m:IModelable">
+                        <TextBlock Text="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Border Background="{StaticResource WindowBackgroundBrush}" DataContext="{Binding ElementName=ToolbarControl}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Rectangle Style="{StaticResource Separator}"/>
+                <c:ImageButton Image="{StaticResource DocumentImage}" ToolTipService.ToolTip="New Diagram" Click="NewDiagramButton_Click"/>
+                <c:ImageButton Image="{StaticResource OpenImage}" ToolTipService.ToolTip="Open existing diagram" Click="OpenButton_Click"/>
+                <c:ImageButton Image="{StaticResource SaveImage}" ToolTipService.ToolTip="Save current diagram" Click="SaveButton_Click"/>
+                <Rectangle Style="{StaticResource Separator}"/>
+                <c:ImageButton Image="{StaticResource PictureImage}" ToolTipService.ToolTip="Export as image" Click="ExportImageButton_Click"/>
+                <c:ImageToggleButton x:Name="GridToggleButton" Image="{StaticResource GridImage}" ToolTipService.ToolTip="Snap to grid lines" Click="GridToggleButton_Click" />
+                <c:ImageButton Image="{StaticResource SymetricAlignImage}" ToolTipService.ToolTip="Symetric Auto Layout &#x0a;&#x0a;Best for small or symetric tree design" Click="SymetricAutoLayoutButton_Click"/>
+                <c:ImageButton Image="{StaticResource CondensedAlignImage}" ToolTipService.ToolTip="Condensed Auto Layout &#x0a;&#x0a;Best for large or asymetric tree design" Click="CondensedAutoLayoutButton_Click"/>
+                <c:ImageButton Image="{StaticResource CalculateImage}" ToolTipService.ToolTip="Calculate model" Click="CalculateModelButton_Click"/>
+                <Rectangle Style="{StaticResource Separator}"/>
+                <TextBlock Text="Model: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="ModelsComboBox" ToolTipService.ToolTip="Select model" SelectionChanged="ModelsComboBox_SelectionChanged"/>
+                <Rectangle Style="{StaticResource Separator}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Rectangle Style="{StaticResource Separator}"/>
+                <c:ImageButton Image="{StaticResource CogImage}" ToolTipService.ToolTip="Settings of the application"/>
+                <c:ImageButton Image="{StaticResource HelpImage}" ToolTipService.ToolTip="Help and TroubleShooting"/>
+                <Rectangle Style="{StaticResource Separator}"/>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+    
+</UserControl>

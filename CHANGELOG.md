@@ -1,5 +1,11 @@
 #Change log
 
+####Version 0.7.0
+- [x] Huge amount of changes
+
+####Version 0.2.0
+- [x] Added "LabeledDesignerItem" class which handles the labels connected to "DesignerItem"
+- [x] A fair amount of changes
 
 ####Version 0.1.0
 - [x] Added "LabeledConectionLine" control which position is updated during "DesignerItem" movement.

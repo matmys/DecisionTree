@@ -9,6 +9,10 @@
                 <ResourceDictionary Source="Resources/Styles/Expander.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/GridSplitter.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Separators.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/NotificationsBar.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/ImageButton.xaml"/>
+                <ResourceDictionary Source="Resources/Styles/ImageToggleButton.xaml"/>
+                <ResourceDictionary Source="Resources/Images/Images.xaml"/>
                 <ResourceDictionary Source="Resources/Stencils/DecisionChartStencils.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

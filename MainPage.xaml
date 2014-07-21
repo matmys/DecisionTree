@@ -16,9 +16,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         
-        <Grid Grid.Row="1" Margin="10">
+        <c:Toolbar x:Name="ToolbarControl" Grid.Row="0"/>
+        
+        <Grid Grid.Row="1" Margin="10,5,10,5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition Width="*"/>
@@ -34,7 +37,7 @@
                     <c:Toolbox ItemSize="60,60" ItemScale="0.6"/>
                 </t:Expander>
                 
-                <t:Expander Grid.Row="1" Header=" Node Properties" IsExpanded="False" Style="{StaticResource ExpanderStyle}" VerticalAlignment="Stretch">
+                <t:Expander Grid.Row="1" Header="Node Properties" IsExpanded="False" Style="{StaticResource ExpanderStyle}" VerticalAlignment="Stretch">
                     <c:PropertiesBox/>
                 </t:Expander>
             </Grid>
@@ -43,9 +46,11 @@
 
             <t:DockPanel Grid.Column="1" Margin="3,0,0,0">
                 <t:Expander x:Name="expander" Header="Diagram WorkBench" Style="{StaticResource GroupBoxStyle}">
-                    <c:DesignerGrid x:Name="designerGrid" GridSize="10"/>
+                    <c:DesignerGrid x:Name="DesignerGridControl"/>
                 </t:Expander>
             </t:DockPanel>
         </Grid>
+
+        <ListBox Grid.Row="2" x:Name="NotificationBar" Style="{StaticResource NotificationsBar}"/>
     </Grid>
 </UserControl>
